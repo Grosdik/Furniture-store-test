@@ -1,0 +1,28 @@
+﻿<Page x:Class="Furniture_store.Views.Control_Page.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Furniture_store.Views.Control_Page"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminPage" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="dataGridHistory" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="100*"/>
+                <DataGridTextColumn Header="Дата входа" Binding="{Binding Date}" Width="100*"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="100*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <Button Content="Пользователи" Name="btnUsers" Click="btnUsers_Click"/>
+            <Button Content="Очистить историю" Name="btnClear" Click="btnClear_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
